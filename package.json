@@ -1,0 +1,25 @@
+{
+  "name": "todoit-sample-mevn-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Treeek/Todoit-sample-mevn-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Treeek/Todoit-sample-mevn-app/issues"
+  },
+  "homepage": "https://github.com/Treeek/Todoit-sample-mevn-app#readme"
+}
