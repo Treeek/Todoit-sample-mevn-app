@@ -60,10 +60,9 @@ describe("Task Controller", () => {
 		};
 		res.on("end", () => {
 			assert(res._isJSON());
-			const data = JSON.parse(res._getData());
 			Task.find({ user_id: user._id }).then((response) => {
-				for (let index = 0; index < data.length; index++) {
-					const task = data[index];
+				for (let index = 0; index < 3; index++) {
+					const task = response[index];
 					assert(task.title === `Task ${1 + index}` && task.description === `Task ${1 + index} description`);
 				}
 				assert(res.statusCode === 200 && res.statusMessage === "Success");
