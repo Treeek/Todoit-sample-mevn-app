@@ -1,7 +1,7 @@
-const User = require("../models/user");
+const User = require("../../models/user");
 const assert = require("assert");
 
-describe("Deleting records", () => {
+describe("Updating records", () => {
 
 	let user;
 
@@ -14,10 +14,10 @@ describe("Deleting records", () => {
 		});
 	});
 
-	it("Delets a record from the database", (done) => {
-		User.findOneAndDelete({ _id: user._id }).then(() => {
+	it("Updates a record from the database", (done) => {
+		User.findOneAndUpdate({ _id: user._id }, { name: "Paulo Guedes" }).then(() => {
 			User.findOne({ _id: user._id }).then((res) => {
-				assert(res === null);
+				assert(res.name === "Paulo Guedes");
 				done();
 			});
 		});

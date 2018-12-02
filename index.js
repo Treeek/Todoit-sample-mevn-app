@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-require("./config/db");
+
+const routerApi = require("./routes/routes");
+app.use("/api", routerApi);
 app.get("/", (req, res) => {
 	res.send("Hello Guys");
 });
