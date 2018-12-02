@@ -8,10 +8,12 @@
     "mongoose": "^5.3.14"
   },
   "devDependencies": {
-    "eslint": "^5.9.0"
+    "eslint": "^5.9.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
