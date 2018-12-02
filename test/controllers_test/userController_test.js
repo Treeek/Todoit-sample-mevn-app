@@ -1,5 +1,7 @@
 const userController = require("../../controllers/userController");
 
 describe("User Controller", () => {
-	it();
+	it("Saves a user into the database", (done) => {
+		
+	});
 });
