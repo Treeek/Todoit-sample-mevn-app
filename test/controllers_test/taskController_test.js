@@ -70,6 +70,28 @@ describe("Task Controller", () => {
 			});
 		});
 		taskController.getTasks(req, res);
+	});
+	it("Adds a task via user id", (done) => {
+		const user_ = new User({ name: "John", email: "jojotimao2018@hotmail.com", password: "1234556", tasksCompleated: 12 });
+		const res = buildResponse();
+		const req = http_mocks.createRequest({
+			method: "POST",
+			url: `/task/${user_._id}`,
+		});
 
+		req.body = {
+			title: "Lavar o lixo",
+			description: "Arrumar o lixo",
+			user_id: user_._id
+		};
+
+		res.on("end", () => {
+			Task.findOne({ user_id: user_._id }).then((response) => {
+				assert(response.title === "Lavar o lixo" && response.description === "Arrumar o lixo");
+				assert(res.statusCode === 200 && res.statusMessage === "Success");
+				done();
+			});
+		});
+		taskController.save(req, res);
 	});
 });

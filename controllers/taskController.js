@@ -16,4 +16,11 @@ taskController.getTasks = async function (req, res) {
 		res.json(tasks);
 	});
 };
+taskController.save = async function (req, res) {
+	const task = new Task(req.body);
+	task.save().then(() => {
+		res.statusMessage = "Success";
+		res.status(200).send();
+	});
+};
 module.exports = taskController;
