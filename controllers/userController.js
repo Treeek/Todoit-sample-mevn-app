@@ -11,12 +11,11 @@ userController.save = async function (req, res) {
 };
 
 userController.login = function (req, res) {
-	const user = new User(req.body);
-	req.session.Auth = user._id;
-	console.log(req.session.Auth);
-
-	res.statusMessage = "Success";
-	res.status(200).send();
+	User.findOne({ email: req.body.email }).then((user) => {
+		req.session.Auth = user._id;
+		res.statusMessage = "Success";
+		res.status(200).send();
+	});
 };
 
 module.exports = userController;

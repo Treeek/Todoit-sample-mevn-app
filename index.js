@@ -16,6 +16,7 @@ app.use(require("body-parser").urlencoded({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use("", routerLogin);
 app.use("/api", routerApi);
 
 app.get("/", (req, res) => {
