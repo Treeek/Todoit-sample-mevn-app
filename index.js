@@ -6,11 +6,11 @@ const routerApi = require("./routes/routes");
 const passport = require("./config/passport-setup");
 
 app.use(require("express-session")({
-	secret: "nakedPepe", // just a long random string
+	secret: "nakedPepe",
 	resave: false,
 	saveUninitialized: true
 }));
-app.use(require("body-parser").urlencoded({
+app.use(express.urlencoded({
 	extended: true
 }));
 app.use(passport.initialize());
